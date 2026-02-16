@@ -29,28 +29,31 @@ export function useCameraStream(topic, options = {}) {
   const streamUrl = useMemo(() => {
     if (!topic || !roverIP || !isConnected) return null;
 
-    const params = new URLSearchParams({
-      topic,
-      type: STREAM_DEFAULTS.type,
-      quality: String(quality),
-      width: String(width),
-      height: String(height),
-    });
+    // Build query string manually - topic should NOT be URL-encoded
+    // web_video_server expects forward slashes as-is in topic names
+    const queryParams = [
+      `topic=${topic}`,
+      `type=${STREAM_DEFAULTS.type}`,
+      `quality=${quality}`,
+      `width=${width}`,
+      `height=${height}`,
+    ].join('&');
 
-    return `http://${roverIP}:${videoPort}/stream?${params.toString()}`;
+    return `http://${roverIP}:${videoPort}/stream?${queryParams}`;
   }, [topic, roverIP, videoPort, isConnected, quality, width, height]);
 
   const snapshotUrl = useMemo(() => {
     if (!topic || !roverIP || !isConnected) return null;
 
-    const params = new URLSearchParams({
-      topic,
-      quality: String(quality),
-      width: String(width),
-      height: String(height),
-    });
+    // Build query string manually - topic should NOT be URL-encoded
+    const queryParams = [
+      `topic=${topic}`,
+      `quality=${quality}`,
+      `width=${width}`,
+      `height=${height}`,
+    ].join('&');
 
-    return `http://${roverIP}:${videoPort}/snapshot?${params.toString()}`;
+    return `http://${roverIP}:${videoPort}/snapshot?${queryParams}`;
   }, [topic, roverIP, videoPort, isConnected, quality, width, height]);
 
   const handleLoad = useCallback(() => {

@@ -42,7 +42,6 @@ export const DEFAULT_CAMERAS = [
   { id: 'cam1', label: 'Front Camera', topic: '/camera1/image_raw' },
   { id: 'cam2', label: 'Rear Camera', topic: '/camera2/image_raw' },
   { id: 'cam3', label: 'Arm Camera', topic: '/camera3/image_raw' },
-  { id: 'cam4', label: 'Gripper Camera', topic: '/camera4/image_raw' },
 ];
 
 export const STREAM_DEFAULTS = {

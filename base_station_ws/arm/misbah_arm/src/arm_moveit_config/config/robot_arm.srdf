@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="robot_arm">
+  <!-- Virtual joint attaches base_link to the world -->
+  <virtual_joint name="virtual_joint" type="fixed" parent_frame="world" child_link="base_link"/>
+
+  <!-- Planning group: all 3 revolute joints -->
+  <group name="manipulator">
+    <joint name="virtual_joint"/>
+    <joint name="base_joint"/>
+    <joint name="shoulder_joint"/>
+    <joint name="elbow_joint"/>
+  </group>
+
+  <!-- Named configurations -->
+  <group_state name="home" group="manipulator">
+    <joint name="base_joint" value="0"/>
+    <joint name="shoulder_joint" value="0"/>
+    <joint name="elbow_joint" value="0"/>
+  </group_state>
+
+  <group_state name="ready" group="manipulator">
+    <joint name="base_joint" value="0"/>
+    <joint name="shoulder_joint" value="0.5"/>
+    <joint name="elbow_joint" value="-1.0"/>
+  </group_state>
+
+  <!-- End effector -->
+  <end_effector name="end_effector" parent_link="ee_link" group="manipulator"/>
+
+  <!-- Disable collision between adjacent links (always in contact) -->
+  <disable_collisions link1="base_link" link2="base_rot" reason="Adjacent"/>
+  <disable_collisions link1="base_rot" link2="arm1" reason="Adjacent"/>
+  <disable_collisions link1="arm1" link2="arm2" reason="Adjacent"/>
+  <disable_collisions link1="arm2" link2="ee_link" reason="Adjacent"/>
+  <!-- Non-adjacent links that never collide given joint limits -->
+  <disable_collisions link1="base_link" link2="arm1" reason="Never"/>
+  <disable_collisions link1="base_rot" link2="arm2" reason="Never"/>
+  <disable_collisions link1="base_rot" link2="ee_link" reason="Never"/>
+  <disable_collisions link1="arm1" link2="ee_link" reason="Never"/>
+</robot>

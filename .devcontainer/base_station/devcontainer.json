@@ -1,17 +1,23 @@
 {
   "name": "Base Station Computer",
   "forwardPorts": [
-    3000
+    3000,
+    9090,
+    8080
   ],
   "dockerFile": "Dockerfile",
   "runArgs": [
     "--privileged",
     "--network=host"
   ],
+  "containerEnv": {
+    "DISPLAY": "host.docker.internal:0.0",
+    "LIBGL_ALWAYS_SOFTWARE": "1"
+  },
   "workspaceMount": "source=${localWorkspaceFolder},target=/${localWorkspaceFolderBasename},type=bind",
   "workspaceFolder": "/${localWorkspaceFolderBasename}/base_station_ws",
   // "mounts" causes problems on Windows hosts
-  // "mounts": [ 
+  // "mounts": [
   //   "source=${localEnv:HOME}${localEnv:USERPROFILE}/.bash_history,target=/home/vscode/.bash_history,type=bind"
   // ]
 }

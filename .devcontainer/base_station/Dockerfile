@@ -42,3 +42,45 @@ RUN sudo curl -fsSL https://deb.nodesource.com/setup_24.x | sudo bash - && \
     sudo apt-get install -y nodejs
 
 EXPOSE 3000
+
+# Block A — ROS 2 arm/MoveIt/ros2_control packages
+RUN sudo apt-get update && sudo apt-get install -y \
+    ros-jazzy-moveit \
+    ros-jazzy-moveit-ros-planning-interface \
+    ros-jazzy-moveit-servo \
+    ros-jazzy-moveit-setup-assistant \
+    ros-jazzy-ros2-control \
+    ros-jazzy-ros2-controllers \
+    ros-jazzy-robot-state-publisher \
+    ros-jazzy-joint-state-publisher \
+    ros-jazzy-joint-state-publisher-gui \
+    ros-jazzy-xacro \
+    ros-jazzy-joy \
+    # ros-jazzy-kdl-parser-py \
+    && sudo rm -rf /var/lib/apt/lists/*
+
+# Block B — colcon build tools
+RUN sudo apt-get update && sudo apt-get install -y \
+    python3-colcon-common-extensions \
+    python3-vcstool \
+    && sudo rm -rf /var/lib/apt/lists/*
+
+# Block C — X11/OpenGL for RViz2 / MoveIt GUI on Windows
+RUN sudo apt-get update && sudo apt-get install -y \
+    libglx-mesa0 \
+    libgl1-mesa-dri \
+    x11-apps \
+    mesa-utils \
+    libxcb-xinerama0 \
+    libxcb-icccm4 \
+    libxcb-image0 \
+    libxcb-keysyms1 \
+    libxcb-randr0 \
+    libxcb-render-util0 \
+    libxcb-xkb1 \
+    libxkbcommon-x11-0 \
+    && sudo rm -rf /var/lib/apt/lists/*
+
+# Block D — auto-source workspace overlay in .bashrc
+# RUN echo '[ -f /deakin_rover/base_station_ws/arm/DCR-Arm-2026/install/setup.bash ] && \
+#     source /deakin_rover/base_station_ws/arm/DCR-Arm-2026/install/setup.bash' >> ~/.bashrc

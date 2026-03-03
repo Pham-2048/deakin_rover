@@ -5,8 +5,8 @@
     "--privileged",
     "--network=host"
   ],
-  "workspaceMount": "source=${localWorkspaceFolder},target=/${localWorkspaceFolderBasename},type=bind",
-  "workspaceFolder": "/${localWorkspaceFolderBasename}/rover_ws",
+  "workspaceMount": "source=${localWorkspaceFolder}/rpi_ws,target=/${localWorkspaceFolderBasename}/rpi_ws,type=bind",
+  "workspaceFolder": "/${localWorkspaceFolderBasename}/rpi_ws",
   "mounts": [
     "source=${localEnv:HOME}${localEnv:USERPROFILE}/.bash_history,target=/home/vscode/.bash_history,type=bind"
   ],

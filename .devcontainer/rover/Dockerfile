@@ -36,3 +36,33 @@ RUN echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> ~/.bashrc
 ################################
 ## ADD ANY CUSTOM SETUP BELOW ##
 ################################
+# Packages for rover infrastructure
+RUN sudo apt-get update && sudo apt-get install -y \
+    ros-${ROS_DISTRO}-moveit \
+    ros-${ROS_DISTRO}-ros2-control \
+    ros-${ROS_DISTRO}-ros2-controllers \
+    ros-${ROS_DISTRO}-robot-state-publisher \
+    ros-${ROS_DISTRO}-joint-state-publisher \
+    ros-${ROS_DISTRO}-xacro \
+    ros-${ROS_DISTRO}-image-transport \
+    ros-${ROS_DISTRO}-rosbridge-server \
+    ros-${ROS_DISTRO}-web-video-server \
+
+    # System tools for monitoring and development
+    RUN sudo apt-get update && sudo apt-get install -y \
+    python3-opencv \
+    python3-pip \
+    python3-numpy \
+    python3-yaml \
+    wireless-tools \
+    net-tools \
+    iputils-ping \
+    psmisc \
+    v4l-utils \
+    && sudo rm -rf /var/lib/apt/lists/*
+
+# Python packages for rover nodes
+RUN pip3 install --no-cache-dir --break-system-packages \
+    psutil
+
+

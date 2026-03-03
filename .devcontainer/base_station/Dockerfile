@@ -46,16 +46,12 @@ EXPOSE 3000
 # Block A — ROS 2 arm/MoveIt/ros2_control packages
 RUN sudo apt-get update && sudo apt-get install -y \
     ros-jazzy-moveit \
-    ros-jazzy-moveit-ros-planning-interface \
-    ros-jazzy-moveit-servo \
-    ros-jazzy-moveit-setup-assistant \
     ros-jazzy-ros2-control \
     ros-jazzy-ros2-controllers \
     ros-jazzy-robot-state-publisher \
     ros-jazzy-joint-state-publisher \
     ros-jazzy-joint-state-publisher-gui \
     ros-jazzy-xacro \
-    ros-jazzy-joy \
     && sudo rm -rf /var/lib/apt/lists/*
 
 # Block B — colcon build tools

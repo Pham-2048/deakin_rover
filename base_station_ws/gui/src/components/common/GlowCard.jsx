@@ -9,7 +9,14 @@ import { Card, CardContent, Typography, Divider } from '@mui/material';
 const GlowCard = ({ title, children, sx, ...props }) => {
   return (
     <Card sx={sx} {...props}>
-      <CardContent>
+      <CardContent sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        flex: 1,
+        minHeight: 0,
+        p: 2,
+        '&:last-child': { pb: 2 },
+      }}>
         {title && (
           <>
             <Typography variant="h6" gutterBottom sx={{ color: 'primary.main' }}>

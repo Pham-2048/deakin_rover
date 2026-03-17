@@ -43,7 +43,7 @@ const CameraStream = ({ topic, label, streamOptions = {} }) => {
           backgroundColor: '#0a0e27',
           border: '1px solid #00d9ff22',
           borderRadius: 1,
-          minHeight: 180,
+          minHeight: 0,
         }}
       >
         <DisconnectedIcon sx={{ fontSize: 40, color: 'text.disabled', mb: 1 }} />
@@ -71,7 +71,7 @@ const CameraStream = ({ topic, label, streamOptions = {} }) => {
           backgroundColor: '#0a0e27',
           border: '1px solid #ff005533',
           borderRadius: 1,
-          minHeight: 180,
+          minHeight: 0,
         }}
       >
         <ErrorIcon sx={{ fontSize: 40, color: 'error.main', mb: 1 }} />
@@ -95,7 +95,7 @@ const CameraStream = ({ topic, label, streamOptions = {} }) => {
         border: '1px solid #00d9ff22',
         borderRadius: 1,
         overflow: 'hidden',
-        minHeight: 180,
+        minHeight: 0,
       }}
     >
       {/* Loading overlay */}

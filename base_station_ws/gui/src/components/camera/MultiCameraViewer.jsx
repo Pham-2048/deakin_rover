@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Box, Grid } from '@mui/material';
+import { Box } from '@mui/material';
 import CameraStream from './CameraStream';
 import CameraSelector from './CameraSelector';
 
@@ -15,29 +15,36 @@ import CameraSelector from './CameraSelector';
  */
 const MultiCameraViewer = ({ cameras, onCameraChange, streamOptions = {} }) => {
   return (
-    <Grid container spacing={1} sx={{ height: '100%' }}>
+    <Box sx={{
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gridTemplateRows: '1fr 1fr',
+      gap: 1,
+      height: '100%',
+    }}>
       {cameras.map((cam, index) => (
-        <Grid item xs={6} key={index}>
-          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5, height: '100%' }}>
-            {/* Camera selector dropdown */}
-            <CameraSelector
-              value={cam.topic}
-              onChange={(newTopic) => onCameraChange(index, newTopic)}
-              label={`Slot ${index + 1}`}
+        <Box key={index} sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 0.5,
+          minHeight: 0,
+          ...(index === 0 && { gridColumn: '1 / span 2' }),
+        }}>
+          <CameraSelector
+            value={cam.topic}
+            onChange={(newTopic) => onCameraChange(index, newTopic)}
+            label={`Slot ${index + 1}`}
+          />
+          <Box sx={{ flex: 1, minHeight: 0 }}>
+            <CameraStream
+              topic={cam.topic}
+              label={cam.label}
+              streamOptions={streamOptions}
             />
-
-            {/* Camera feed */}
-            <Box sx={{ flex: 1, minHeight: 0 }}>
-              <CameraStream
-                topic={cam.topic}
-                label={cam.label}
-                streamOptions={streamOptions}
-              />
-            </Box>
           </Box>
-        </Grid>
+        </Box>
       ))}
-    </Grid>
+    </Box>
   );
 };
 

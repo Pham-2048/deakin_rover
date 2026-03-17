@@ -1,0 +1,478 @@
+[2026-03-17T01:39:54.003Z] Dev Containers 0.447.0 over Remote - SSH 0.122.0 in VS Code 1.110.1 (61b3d0ab13be7dda2389f1d3e60a119c7f660cc3).
+[2026-03-17T01:39:54.003Z] Start: Resolving Remote
+[2026-03-17T01:39:54.011Z] Start: Loading environment from ExecServer
+[2026-03-17T01:39:54.015Z] Stop (4 ms): Loading environment from ExecServer
+[2026-03-17T01:39:54.015Z] Host OS: linux 5.15.185-tegra
+[2026-03-17T01:39:54.016Z] Host CWD: /home/me/Documents/deakin_rover
+[2026-03-17T01:39:54.016Z] Start: Run: /bin/sh 
+[2026-03-17T01:39:54.023Z] Start: Run in host: echo ~
+[2026-03-17T01:39:54.190Z] /home/me
+[2026-03-17T01:39:54.190Z] 
+[2026-03-17T01:39:54.190Z] Stop (167 ms): Run in host: echo ~
+[2026-03-17T01:39:54.191Z] Start: Run in host: id -un
+[2026-03-17T01:39:54.237Z] me
+[2026-03-17T01:39:54.238Z] 
+[2026-03-17T01:39:54.238Z] Stop (47 ms): Run in host: id -un
+[2026-03-17T01:39:54.239Z] Start: Run in host:  (command -v getent >/dev/null 2>&1 && getent passwd 'me' || grep -E '^me|^[^:]*:[^:]*:me:' /etc/passwd || true)
+[2026-03-17T01:39:54.436Z] Stop (197 ms): Run in host:  (command -v getent >/dev/null 2>&1 && getent passwd 'me' || grep -E '^me|^[^:]*:[^:]*:me:' /etc/passwd || true)
+[2026-03-17T01:39:54.436Z] userEnvProbe: loginInteractiveShell (default)
+[2026-03-17T01:39:54.437Z] userEnvProbe: not found in cache
+[2026-03-17T01:39:54.438Z] userEnvProbe shell: /bin/bash
+[2026-03-17T01:39:54.650Z] userEnvProbe PATHs:
+Probe:     '/usr/local/cuda-12.6/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'
+Container: None
+[2026-03-17T01:39:54.657Z] Setting up container for folder or workspace: /home/me/Documents/deakin_rover
+[2026-03-17T01:39:54.657Z] Host authority: ssh-remote+jetson
+[2026-03-17T01:39:54.813Z] Start: Check Docker is running
+[2026-03-17T01:39:54.813Z] Start: Run: docker version
+[2026-03-17T01:39:54.865Z] Client: Docker Engine - Community
+ Version:           29.3.0
+ API version:       1.54
+ Go version:        go1.25.7
+ Git commit:
+[2026-03-17T01:39:54.865Z]         5927d80
+ Built:             Thu Mar  5 14:26:40 2026
+ OS/Arch:           linux/arm64
+ Context:           default
+
+Server: Docker Engine - Community
+ Engine:
+[2026-03-17T01:39:54.865Z]   Version:          29.3.0
+  API version:      1.54 (minimum version 1.40)
+  Go version:       
+[2026-03-17T01:39:54.865Z] go1.25.7
+  Git commit:       83bca51
+  Built:            Thu Mar  5 14:26:40 2026
+[2026-03-17T01:39:54.865Z]   OS/Arch:          linux/arm64
+  Experimental:     false
+ containerd:
+[2026-03-17T01:39:54.865Z]   Version:          v2.2.2
+  GitCommit:
+[2026-03-17T01:39:54.865Z]         301b2dac98f15c27117da5c8af12118a041a31d9
+ runc:
+[2026-03-17T01:39:54.865Z]   Version:          1.3.4
+  GitCommit:        
+[2026-03-17T01:39:54.865Z] v1.3.4-0-gd6d73eb8
+ docker-init:
+[2026-03-17T01:39:54.866Z]   Version:          
+[2026-03-17T01:39:54.866Z] 0.19.0
+  GitCommit:        de40ad0
+[2026-03-17T01:39:54.866Z] Stop (53 ms): Run: docker version
+[2026-03-17T01:39:54.866Z] Stop (53 ms): Check Docker is running
+[2026-03-17T01:39:54.867Z] Start: Run: docker volume ls -q
+[2026-03-17T01:39:55.009Z] Stop (142 ms): Run: docker volume ls -q
+[2026-03-17T01:39:55.010Z] Start: Run: docker ps -q -a --filter label=vsch.local.folder=/home/me/Documents/deakin_rover --filter label=vsch.quality=stable
+[2026-03-17T01:39:55.214Z] Stop (204 ms): Run: docker ps -q -a --filter label=vsch.local.folder=/home/me/Documents/deakin_rover --filter label=vsch.quality=stable
+[2026-03-17T01:39:55.214Z] Start: Run: docker ps -q -a --filter label=devcontainer.local_folder=/home/me/Documents/deakin_rover --filter label=devcontainer.config_file=/home/me/Documents/deakin_rover/.devcontainer/rover/devcontainer.json
+[2026-03-17T01:39:55.419Z] Stop (205 ms): Run: docker ps -q -a --filter label=devcontainer.local_folder=/home/me/Documents/deakin_rover --filter label=devcontainer.config_file=/home/me/Documents/deakin_rover/.devcontainer/rover/devcontainer.json
+[2026-03-17T01:39:55.419Z] Start: Run: docker ps -q -a --filter label=devcontainer.local_folder=/home/me/Documents/deakin_rover
+[2026-03-17T01:39:55.470Z] Stop (51 ms): Run: docker ps -q -a --filter label=devcontainer.local_folder=/home/me/Documents/deakin_rover
+[2026-03-17T01:39:55.470Z] Start: Run: docker ps -q -a --filter label=devcontainer.local_folder=/home/me/Documents/deakin_rover
+[2026-03-17T01:39:55.623Z] Stop (153 ms): Run: docker ps -q -a --filter label=devcontainer.local_folder=/home/me/Documents/deakin_rover
+[2026-03-17T01:39:55.624Z] Running Dev Containers CLI:   up --container-session-data-folder /tmp/devcontainers-2fd5279c-45ee-4521-8488-2aa9a5953ecb1773711592868 --workspace-folder /home/me/Documents/deakin_rover --workspace-mount-consistency cached --gpu-availability detect --id-label devcontainer.local_folder=/home/me/Documents/deakin_rover --id-label devcontainer.config_file=/home/me/Documents/deakin_rover/.devcontainer/rover/devcontainer.json --log-level debug --log-format json --config /home/me/Documents/deakin_rover/.devcontainer/rover/devcontainer.json --default-user-env-probe loginInteractiveShell --mount type=volume,source=vscode,target=/vscode,external=true --skip-post-create --update-remote-user-uid-default on --mount-workspace-git-root --include-configuration --include-merged-configuration
+[2026-03-17T01:39:55.624Z] Start: Checking for Dev Containers CLI
+[2026-03-17T01:39:55.628Z] Stop (4 ms): Checking for Dev Containers CLI
+[2026-03-17T01:39:55.631Z] Start: Run: /home/me/.vscode-server/cli/servers/Stable-61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/server/node /home/me/.vscode-remote-containers/dist/dev-containers-cli-0.447.0/dist/spec-node/devContainersSpecCLI.js up --container-session-data-folder /tmp/devcontainers-2fd5279c-45ee-4521-8488-2aa9a5953ecb1773711592868 --workspace-folder /home/me/Documents/deakin_rover --workspace-mount-consistency cached --gpu-availability detect --id-label devcontainer.local_folder=/home/me/Documents/deakin_rover --id-label devcontainer.config_file=/home/me/Documents/deakin_rover/.devcontainer/rover/devcontainer.json --log-level debug --log-format json --config /home/me/Documents/deakin_rover/.devcontainer/rover/devcontainer.json --default-user-env-probe loginInteractiveShell --mount type=volume,source=vscode,target=/vscode,external=true --skip-post-create --update-remote-user-uid-default on --mount-workspace-git-root --include-configuration --include-merged-configuration
+[2026-03-17T01:39:55.849Z] @devcontainers/cli 0.83.3. Node.js v22.22.0. linux 5.15.185-tegra arm64.
+[2026-03-17T01:39:55.849Z] Start: Run: docker buildx version
+[2026-03-17T01:39:55.987Z] Stop (138 ms): Run: docker buildx version
+[2026-03-17T01:39:55.988Z] github.com/docker/buildx v0.31.1 a2675950d46b2cb171b23c2015ca44fb88607531
+[2026-03-17T01:39:55.988Z] 
+[2026-03-17T01:39:55.988Z] Start: Run: docker version --format {{.Server.Version}}
+[2026-03-17T01:39:56.028Z] Stop (40 ms): Run: docker version --format {{.Server.Version}}
+[2026-03-17T01:39:56.029Z] 29.3.0
+[2026-03-17T01:39:56.029Z] 
+[2026-03-17T01:39:56.030Z] Start: Run: docker -v
+[2026-03-17T01:39:56.059Z] Stop (29 ms): Run: docker -v
+[2026-03-17T01:39:56.059Z] Start: Resolving Remote
+[2026-03-17T01:39:56.185Z] Start: Run: docker ps -q -a --filter label=devcontainer.local_folder=/home/me/Documents/deakin_rover --filter label=devcontainer.config_file=/home/me/Documents/deakin_rover/.devcontainer/rover/devcontainer.json
+[2026-03-17T01:39:56.214Z] Stop (29 ms): Run: docker ps -q -a --filter label=devcontainer.local_folder=/home/me/Documents/deakin_rover --filter label=devcontainer.config_file=/home/me/Documents/deakin_rover/.devcontainer/rover/devcontainer.json
+[2026-03-17T01:39:56.223Z] Start: Run: docker inspect --type image dustynv/ros:jazzy-ros-base-r36.4.0-cu128-24.04
+[2026-03-17T01:39:56.252Z] Stop (29 ms): Run: docker inspect --type image dustynv/ros:jazzy-ros-base-r36.4.0-cu128-24.04
+[2026-03-17T01:39:56.937Z] Start: Run: docker-credential-secret get
+[2026-03-17T01:39:56.942Z] Stop (5 ms): Run: docker-credential-secret get
+[2026-03-17T01:39:56.950Z] Stop (13 ms): Run: docker-credential-secret get
+[2026-03-17T01:39:58.824Z] Start: Run: docker buildx build --load --build-arg BUILDKIT_INLINE_CACHE=1 -f /tmp/devcontainercli-me/container-features/0.83.3-1773711598818/Dockerfile-with-features -t vsc-deakin_rover-318d3a6556139e6a7fc21a6ca8b5a11d6ded9fb9d4d4675d25429bba3839bc05 --target dev_containers_target_stage --build-arg _DEV_CONTAINERS_BASE_IMAGE=dev_container_auto_added_stage_label /home/me/Documents/deakin_rover/.devcontainer/rover
+[2026-03-17T01:39:59.056Z] [+] Building 0.0s (0/1)                                          docker:default
+[2026-03-17T01:39:59.227Z] [+] Building 0.2s (1/2)                                          docker:default
+ => [internal] load build definition from Dockerfile-with-features         0.0s
+ => => transferring dockerfile: 2.63kB                                     0.0s
+ => [internal] load metadata for docker.io/dustynv/ros:jazzy-ros-base-r36  0.2s
+[2026-03-17T01:39:59.377Z] [+] Building 0.3s (1/2)                                          docker:default
+ => [internal] load build definition from Dockerfile-with-features         0.0s
+ => => transferring dockerfile: 2.63kB                                     0.0s
+ => [internal] load metadata for docker.io/dustynv/ros:jazzy-ros-base-r36  0.3s
+[2026-03-17T01:39:59.528Z] [+] Building 0.5s (1/2)                                          docker:default
+ => [internal] load build definition from Dockerfile-with-features         0.0s
+[2026-03-17T01:39:59.528Z]  => => transferring dockerfile: 2.63kB                                     0.0s
+ => [internal] load metadata for docker.io/dustynv/ros:jazzy-ros-base-r36  0.5s
+[2026-03-17T01:39:59.677Z] [+] Building 0.6s (1/2)                                          docker:default
+ => [internal] load build definition from Dockerfile-with-features         0.0s
+ => => transferring dockerfile: 2.63kB                                     0.0s
+[2026-03-17T01:39:59.678Z]  => [internal] load metadata for docker.io/dustynv/ros:jazzy-ros-base-r36  0.6s
+[2026-03-17T01:39:59.828Z] 
+[2026-03-17T01:39:59.828Z] [+] Building 0.8s (1/2)                                          docker:default
+ => [internal] load build definition from Dockerfile-with-features         0.0s
+ => => transferring dockerfile: 2.63kB                                     0.0s
+ => [internal] load metadata for docker.io/dustynv/ros:jazzy-ros-base-r36  0.8s
+[2026-03-17T01:39:59.878Z] [+] Building 0.8s (2/2)                                          docker:default
+ => [internal] load build definition from Dockerfile-with-features         0.0s
+[2026-03-17T01:39:59.878Z]  => => transferring dockerfile: 2.63kB                                     0.0s
+ => [internal] load metadata for docker.io/dustynv/ros:jazzy-ros-base-r36  0.8s
+[2026-03-17T01:40:00.096Z] 
+[2026-03-17T01:40:00.097Z] [+] Building 1.0s (12/15)                                        docker:default
+ => [internal] load build definition from Dockerfile-with-features         0.0s
+ => => transferring dockerfile: 2.63kB                                     0.0s
+ => [internal] load metadata for docker.io/dustynv/ros:jazzy-ros-base-r36  0.8s
+ => [internal] load .dockerignore                                          0.0s
+ => => transferring context: 2B                                            0.0s
+ => [dev_container_auto_added_stage_label  1/12] FROM docker.io/dustynv/r  0.0s
+ => => resolve docker.io/dustynv/ros:jazzy-ros-base-r36.4.0-cu128-24.04@s  0.0s
+ => CACHED [dev_container_auto_added_stage_label  2/12] RUN if ! id -u 10  0.0s
+ => CACHED [dev_container_auto_added_stage_label  3/12] RUN sudo curl -sS  0.0s
+ => CACHED [dev_container_auto_added_stage_label  4/12] RUN apt-get updat  0.0s
+ => CACHED [dev_container_auto_added_stage_label  5/12] RUN sudo usermod   0.0s
+ => CACHED [dev_container_auto_added_stage_label  6/12] RUN sudo apt-get   0.0s
+ => CACHED [dev_container_auto_added_stage_label  7/12] RUN sudo apt-get   0.0s
+ => CACHED [dev_container_auto_added_stage_label  8/12] RUN rosdep update  0.0s
+ => CACHED [dev_container_auto_added_stage_label  9/12] RUN echo "source   0.0s
+ => [dev_container_auto_added_stage_label 10/12] RUN /ros2_install.sh      0.2s
+[2026-03-17T01:40:00.225Z] [+] Building 1.2s (12/15)                                        docker:default
+ => [internal] load build definition from Dockerfile-with-features         0.0s
+ => => transferring dockerfile: 2.63kB                                     0.0s
+ => [internal] load metadata for docker.io/dustynv/ros:jazzy-ros-base-r36  0.8s
+ => [internal] load .dockerignore                                          0.0s
+[2026-03-17T01:40:00.225Z]  => => transferring context: 2B                                            0.0s
+ => [dev_container_auto_added_stage_label  1/12] FROM docker.io/dustynv/r  0.0s
+ => => resolve docker.io/dustynv/ros:jazzy-ros-base-r36.4.0-cu128-24.04@s  0.0s
+ => CACHED [dev_container_auto_added_stage_label  2/12] RUN if ! id -u 10  0.0s
+ => CACHED [dev_container_auto_added_stage_label  3/12] RUN sudo curl -sS  0.0s
+ => CACHED [dev_container_auto_added_stage_label  4/12] RUN apt-get updat  0.0s
+ => CACHED [dev_container_auto_added_stage_label  5/12] RUN sudo usermod   0.0s
+ => CACHED [dev_container_auto_added_stage_label  6/12] RUN sudo apt-get   0.0s
+ => CACHED [dev_container_auto_added_stage_label  7/12] RUN sudo apt-get   0.0s
+ => CACHED [dev_container_auto_added_stage_label  8/12] RUN rosdep update  0.0s
+ => CACHED [dev_container_auto_added_stage_label  9/12] RUN echo "source   0.0s
+ => [dev_container_auto_added_stage_label 10/12] RUN /ros2_install.sh      0.3s
+ => => # + source /opt/ros/jazzy/install/setup.bash                            
+[2026-03-17T01:40:00.382Z] [+] Building 1.3s (12/15)                                        docker:default
+ => [internal] load build definition from Dockerfile-with-features         0.0s
+ => => transferring dockerfile: 2.63kB                                     0.0s
+ => [internal] load metadata for docker.io/dustynv/ros:jazzy-ros-base-r36  0.8s
+ => [internal] load .dockerignore                                          0.0s
+ => => transferring context: 2B                                            0.0s
+ => [dev_container_auto_added_stage_label  1/12] FROM docker.io/dustynv/r  0.0s
+ => => resolve docker.io/dustynv/ros:jazzy-ros-base-r36.4.0-cu128-24.04@s  0.0s
+ => CACHED [dev_container_auto_added_stage_label  2/12] RUN if ! id -u 10  0.0s
+ => CACHED [dev_container_auto_added_stage_label  3/12] RUN sudo curl -sS  0.0s
+ => CACHED [dev_container_auto_added_stage_label  4/12] RUN apt-get updat  0.0s
+ => CACHED [dev_container_auto_added_stage_label  5/12] RUN sudo usermod   0.0s
+ => CACHED [dev_container_auto_added_stage_label  6/12] RUN sudo apt-get   0.0s
+ => CACHED [dev_container_auto_added_stage_label  7/12] RUN sudo apt-get   0.0s
+ => CACHED [dev_container_auto_added_stage_label  8/12] RUN rosdep update  0.0s
+ => CACHED [dev_container_auto_added_stage_label  9/12] RUN echo "source   0.0s
+ => [dev_container_auto_added_stage_label 10/12] RUN /ros2_install.sh      0.4s
+ => => # +++ unset _colcon_prefix_bash_prepend_unique_value                    
+ => => # +++ '[' -n '' ']'                                                     
+ => => # +++ _colcon_python_executable=/usr/bin/python3                        
+ => => # +++ '[' '!' -f /usr/bin/python3 ']'                                   
+ => => # ++++ /usr/bin/python3 /opt/ros/jazzy/install/_local_setup_util_sh.py s
+ => => # h bash --merged-install                                               
+[2026-03-17T01:40:00.532Z] [+] Building 1.5s (12/15)                                        docker:default
+ => [internal] load build definition from Dockerfile-with-features         0.0s
+[2026-03-17T01:40:00.532Z]  => => transferring dockerfile: 2.63kB                                     0.0s
+ => [internal] load metadata for docker.io/dustynv/ros:jazzy-ros-base-r36  0.8s
+ => [internal] load .dockerignore                                          0.0s
+ => => transferring context: 2B                                            0.0s
+ => [dev_container_auto_added_stage_label  1/12] FROM docker.io/dustynv/r  0.0s
+ => => resolve docker.io/dustynv/ros:jazzy-ros-base-r36.4.0-cu128-24.04@s  0.0s
+ => CACHED [dev_container_auto_added_stage_label  2/12] RUN if ! id -u 10  0.0s
+ => CACHED [dev_container_auto_added_stage_label  3/12] RUN sudo curl -sS  0.0s
+ => CACHED [dev_container_auto_added_stage_label  4/12] RUN apt-get updat  0.0s
+ => CACHED [dev_container_auto_added_stage_label  5/12] RUN sudo usermod   0.0s
+ => CACHED [dev_container_auto_added_stage_label  6/12] RUN sudo apt-get   0.0s
+ => CACHED [dev_container_auto_added_stage_label  7/12] RUN sudo apt-get   0.0s
+ => CACHED [dev_container_auto_added_stage_label  8/12] RUN rosdep update  0.0s
+ => CACHED [dev_container_auto_added_stage_label  9/12] RUN echo "source   0.0s
+ => [dev_container_auto_added_stage_label 10/12] RUN /ros2_install.sh      0.6s
+ => => # +++ unset _colcon_prefix_bash_prepend_unique_value                    
+ => => # +++ '[' -n '' ']'                                                     
+ => => # +++ _colcon_python_executable=/usr/bin/python3                        
+ => => # +++ '[' '!' -f /usr/bin/python3 ']'                                   
+ => => # ++++ /usr/bin/python3 /opt/ros/jazzy/install/_local_setup_util_sh.py s
+ => => # h bash --merged-install                                               
+[2026-03-17T01:40:00.612Z] [+] Building 1.6s (12/15)                                        docker:default
+ => [internal] load build definition from Dockerfile-with-features         0.0s
+ => => transferring dockerfile: 2.63kB                                     0.0s
+ => [internal] load metadata for docker.io/dustynv/ros:jazzy-ros-base-r36  0.8s
+ => [internal] load .dockerignore                                          0.0s
+ => => transferring context: 2B                                            0.0s
+ => [dev_container_auto_added_stage_label  1/12] FROM docker.io/dustynv/r  0.0s
+ => => resolve docker.io/dustynv/ros:jazzy-ros-base-r36.4.0-cu128-24.04@s  0.0s
+ => CACHED [dev_container_auto_added_stage_label  2/12] RUN if ! id -u 10  0.0s
+[2026-03-17T01:40:00.612Z]  => CACHED [dev_container_auto_added_stage_label  3/12] RUN sudo curl -sS  0.0s
+ => CACHED [dev_container_auto_added_stage_label  4/12] RUN apt-get updat  0.0s
+ => CACHED [dev_container_auto_added_stage_label  5/12] RUN sudo usermod   0.0s
+ => CACHED [dev_container_auto_added_stage_label  6/12] RUN sudo apt-get   0.0s
+ => CACHED [dev_container_auto_added_stage_label  7/12] RUN sudo apt-get   0.0s
+ => CACHED [dev_container_auto_added_stage_label  8/12] RUN rosdep update  0.0s
+ => CACHED [dev_container_auto_added_stage_label  9/12] RUN echo "source   0.0s
+ => [dev_container_auto_added_stage_label 10/12] RUN /ros2_install.sh      0.7s
+ => => # G_CONFIG_PATH=${PKG_CONFIG_PATH%?} ; fi                               
+ => => # if [ "$(echo -n $ROS_VERSION | head -c 1)" = ":" ]; then export ROS_VE
+ => => # RSION=${ROS_VERSION#?} ; fi                                           
+ => => # if [ "$(echo -n $ROS_VERSION | tail -c 1)" = ":" ]; then export ROS_VE
+ => => # RSION=${ROS_VERSION%?} ; fi'                                          
+ => => # +++ unset _colcon_python_executable                                   
+[2026-03-17T01:40:00.729Z] [+] Building 1.7s (13/15)                                        docker:default
+ => [internal] load build definition from Dockerfile-with-features         0.0s
+ => => transferring dockerfile: 2.63kB                                     0.0s
+ => [internal] load metadata for docker.io/dustynv/ros:jazzy-ros-base-r36  0.8s
+ => [internal] load .dockerignore                                          0.0s
+ => => transferring context: 2B                                            0.0s
+ => [dev_container_auto_added_stage_label  1/12] FROM docker.io/dustynv/r  0.0s
+ => => resolve docker.io/dustynv/ros:jazzy-ros-base-r36.4.0-cu128-24.04@s  0.0s
+ => CACHED [dev_container_auto_added_stage_label  2/12] RUN if ! id -u 10  0.0s
+ => CACHED [dev_container_auto_added_stage_label  3/12] RUN sudo curl -sS  0.0s
+[2026-03-17T01:40:00.729Z]  => CACHED [dev_container_auto_added_stage_label  4/12] RUN apt-get updat  0.0s
+ => CACHED [dev_container_auto_added_stage_label  5/12] RUN sudo usermod   0.0s
+ => CACHED [dev_container_auto_added_stage_label  6/12] RUN sudo apt-get   0.0s
+ => CACHED [dev_container_auto_added_stage_label  7/12] RUN sudo apt-get   0.0s
+ => CACHED [dev_container_auto_added_stage_label  8/12] RUN rosdep update  0.0s
+ => CACHED [dev_container_auto_added_stage_label  9/12] RUN echo "source   0.0s
+ => ERROR [dev_container_auto_added_stage_label 10/12] RUN /ros2_install.  0.8s
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+[2026-03-17T01:40:00.792Z] [+] Building 1.7s (13/15)                                        docker:default
+ => [internal] load build definition from Dockerfile-with-features         0.0s
+ => => transferring dockerfile: 2.63kB                                     0.0s
+ => [internal] load metadata for docker.io/dustynv/ros:jazzy-ros-base-r36  0.8s
+ => [internal] load .dockerignore                                          0.0s
+ => => transferring context: 2B                                            0.0s
+ => [dev_container_auto_added_stage_label  1/12] FROM docker.io/dustynv/r  0.0s
+ => => resolve docker.io/dustynv/ros:jazzy-ros-base-r36.4.0-cu128-24.04@s  0.0s
+[2026-03-17T01:40:00.792Z]  => CACHED [dev_container_auto_added_stage_label  2/12] RUN if ! id -u 10  0.0s
+ => CACHED [dev_container_auto_added_stage_label  3/12] RUN sudo curl -sS  0.0s
+ => CACHED [dev_container_auto_added_stage_label  4/12] RUN apt-get updat  0.0s
+ => CACHED [dev_container_auto_added_stage_label  5/12] RUN sudo usermod   0.0s
+ => CACHED [dev_container_auto_added_stage_label  6/12] RUN sudo apt-get   0.0s
+ => CACHED [dev_container_auto_added_stage_label  7/12] RUN sudo apt-get   0.0s
+ => CACHED [dev_container_auto_added_stage_label  8/12] RUN rosdep update  0.0s
+ => CACHED [dev_container_auto_added_stage_label  9/12] RUN echo "source   0.0s
+ => ERROR [dev_container_auto_added_stage_label 10/12] RUN /ros2_install.  0.8s
+------
+ > [dev_container_auto_added_stage_label 10/12] RUN /ros2_install.sh     ros2_control     ros2_controllers     robot_state_publisher     joint_state_publisher     xacro     image_transport     rosbridge_suite     web_video_server:
+0.279 + source /opt/ros/jazzy/install/setup.bash
+0.281 ++++ dirname /opt/ros/jazzy/install/setup.bash
+0.283 +++ builtin cd /opt/ros/jazzy/install
+0.283 +++ pwd
+0.284 ++ COLCON_CURRENT_PREFIX=/opt/ros/jazzy/install
+0.284 ++ _colcon_prefix_chain_bash_source_script /opt/ros/jazzy/install/local_setup.bash
+0.284 ++ '[' -f /opt/ros/jazzy/install/local_setup.bash ']'
+0.284 ++ '[' -n '' ']'
+0.284 ++ . /opt/ros/jazzy/install/local_setup.bash
+0.284 +++ '[' -z /opt/ros/jazzy/install ']'
+0.284 +++ _colcon_prefix_bash_COLCON_CURRENT_PREFIX=/opt/ros/jazzy/install
+0.284 +++ _colcon_prefix_bash_prepend_unique_value COLCON_PREFIX_PATH /opt/ros/jazzy/install
+0.285 +++ _listname=COLCON_PREFIX_PATH
+0.285 +++ _value=/opt/ros/jazzy/install
+0.285 +++ eval '_values="$COLCON_PREFIX_PATH"'
+0.285 ++++ _values=
+0.285 +++ _colcon_prefix_bash_prepend_unique_value_IFS=' 	
+0.285 '
+0.285 +++ IFS=:
+0.285 +++ _all_values=/opt/ros/jazzy/install
+0.285 +++ _contained_value=
+0.285 +++ unset _item
+0.285 +++ '[' -z '' ']'
+0.285 +++ '[' -n '' ']'
+0.285 +++ unset _contained_value
+0.285 +++ IFS=' 	
+0.285 '
+0.285 +++ unset _colcon_prefix_bash_prepend_unique_value_IFS
+0.285 +++ eval export 'COLCON_PREFIX_PATH="/opt/ros/jazzy/install"'
+0.285 ++++ export COLCON_PREFIX_PATH=/opt/ros/jazzy/install
+0.285 ++++ COLCON_PREFIX_PATH=/opt/ros/jazzy/install
+0.285 +++ unset _all_values
+0.285 +++ unset _values
+0.285 +++ unset _value
+0.285 +++ unset _listname
+0.285 +++ unset _colcon_prefix_bash_prepend_unique_value
+0.285 +++ '[' -n '' ']'
+0.285 +++ _colcon_python_executable=/usr/bin/python3
+0.285 +++ '[' '!' -f /usr/bin/python3 ']'
+0.286 ++++ /usr/bin/python3 /opt/ros/jazzy/install/_local_setup_util_sh.py sh bash --merged-install
+0.666 +++ _colcon_ordered_commands='export CMAKE_PREFIX_PATH="/opt/ros/jazzy/install:$CMAKE_PREFIX_PATH"
+0.666 export LD_LIBRARY_PATH="/opt/ros/jazzy/install/lib:$LD_LIBRARY_PATH"
+0.666 export PATH="/opt/ros/jazzy/install/bin:$PATH"
+0.666 export PYTHONPATH="/opt/ros/jazzy/install/lib/python3.12/site-packages:$PYTHONPATH"
+0.666 export AMENT_PREFIX_PATH="/opt/ros/jazzy/install:$AMENT_PREFIX_PATH"
+0.666 COLCON_CURRENT_PREFIX="/opt/ros/jazzy/install" _colcon_prefix_sh_source_script "/opt/ros/jazzy/install/share/ament_index_python/environment/ament_index-argcomplete.bash"
+0.666 export PKG_CONFIG_PATH="/opt/ros/jazzy/install/lib/pkgconfig:$PKG_CONFIG_PATH"
+0.666 export PKG_CONFIG_PATH="/opt/ros/jazzy/install/lib/aarch64-linux-gnu/pkgconfig:$PKG_CONFIG_PATH"
+0.666 export LD_LIBRARY_PATH="/opt/ros/jazzy/install/opt/mimick_vendor/lib:$LD_LIBRARY_PATH"
+0.666 COLCON_CURRENT_PREFIX="/opt/ros/jazzy/install" _colcon_prefix_sh_source_script "/opt/ros/jazzy/install/share/ros_environment/environment/0.ros_distro_check.sh"
+0.666 export ROS_AUTOMATIC_DISCOVERY_RANGE="SUBNET"
+0.666 export ROS_DISTRO="jazzy"
+0.666 export ROS_PYTHON_VERSION="3"
+0.666 export ROS_VERSION="2"
+0.666 COLCON_CURRENT_PREFIX="/opt/ros/jazzy/install" _colcon_prefix_sh_source_script "/opt/ros/jazzy/install/share/r
+[2026-03-17T01:40:00.792Z] os2cli/environment/ros2-argcomplete.bash"
+0.666 if [ "$(echo -n $CMAKE_PREFIX_PATH | head -c 1)" = ":" ]; then export CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH#?} ; fi
+0.666 if [ "$(echo -n $CMAKE_PREFIX_PATH | tail -c 1)" = ":" ]; then export CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH%?} ; fi
+0.666 if [ "$(echo -n $AMENT_PREFIX_PATH | head -c 1)" = ":" ]; then export AMENT_PREFIX_PATH=${AMENT_PREFIX_PATH#?} ; fi
+0.666 if [ "$(echo -n $AMENT_PREFIX_PATH | tail -c 1)" = ":" ]; then export AMENT_PREFIX_PATH=${AMENT_PREFIX_PATH%?} ; fi
+0.666 if [ "$(echo -n $PKG_CONFIG_PATH | head -c 1)" = ":" ]; then export PKG_CONFIG_PATH=${PKG_CONFIG_PATH#?} ; fi
+0.666 if [ "$(echo -n $PKG_CONFIG_PATH | tail -c 1)" = ":" ]; then export PKG_CONFIG_PATH=${PKG_CONFIG_PATH%?} ; fi
+0.666 if [ "$(echo -n $ROS_VERSION | head -c 1)" = ":" ]; then export ROS_VERSION=${ROS_VERSION#?} ; fi
+0.666 if [ "$(echo -n $ROS_VERSION | tail -c 1)" = ":" ]; then export ROS_VERSION=${ROS_VERSION%?} ; fi'
+0.666 +++ unset _colcon_python_executable
+0.666 +++ '[' -n '' ']'
+0.666 +++ eval 'export CMAKE_PREFIX_PATH="/opt/ros/jazzy/install:$CMAKE_PREFIX_PATH"
+0.666 export LD_LIBRARY_PATH="/opt/ros/jazzy/install/lib:$LD_LIBRARY_PATH"
+0.666 export PATH="/opt/ros/jazzy/install/bin:$PATH"
+0.666 export PYTHONPATH="/opt/ros/jazzy/install/lib/python3.12/site-packages:$PYTHONPATH"
+0.666 export AMENT_PREFIX_PATH="/opt/ros/jazzy/install:$AMENT_PREFIX_PATH"
+0.666 COLCON_CURRENT_PREFIX="/opt/ros/jazzy/install" _colcon_prefix_sh_source_script "/opt/ros/jazzy/install/share/ament_index_python/environment/ament_index-argcomplete.bash"
+0.666 export PKG_CONFIG_PATH="/opt/ros/jazzy/install/lib/pkgconfig:$PKG_CONFIG_PATH"
+0.666 export PKG_CONFIG_PATH="/opt/ros/jazzy/install/lib/aarch64-linux-gnu/pkgconfig:$PKG_CONFIG_PATH"
+0.666 export LD_LIBRARY_PATH="/opt/ros/jazzy/install/opt/mimick_vendor/lib:$LD_LIBRARY_PATH"
+0.666 COLCON_CURRENT_PREFIX="/opt/ros/jazzy/install" _colcon_prefix_sh_source_script "/opt/ros/jazzy/install/share/ros_environment/environment/0.ros_distro_check.sh"
+0.666 export ROS_AUTOMATIC_DISCOVERY_RANGE="SUBNET"
+0.666 export ROS_DISTRO="jazzy"
+0.666 export ROS_PYTHON_VERSION="3"
+0.666 export ROS_VERSION="2"
+0.666 COLCON_CURRENT_PREFIX="/opt/ros/jazzy/install" _colcon_prefix_sh_source_script "/opt/ros/jazzy/install/share/ros2cli/environment/ros2-argcomplete.bash"
+0.666 if [ "$(echo -n $CMAKE_PREFIX_PATH | head -c 1)" = ":" ]; then export CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH#?} ; fi
+0.666 if [ "$(echo -n $CMAKE_PREFIX_PATH | tail -c 1)" = ":" ]; then export CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH%?} ; fi
+0.666 if [ "$(echo -n $AMENT_PREFIX_PATH | head -c 1)" = ":" ]; then export AMENT_PREFIX_PATH=${AMENT_PREFIX_PATH#?} ; fi
+0.666 if [ "$(echo -n $AMENT_PREFIX_PATH | tail -c 1)" = ":" ]; then export AMENT_PREFIX_PATH=${AMENT_PREFIX_PATH%?} ; fi
+0.666 if [ "$(echo -n $PKG_CONFIG_PATH | head -c 1)" = ":" ]; then export PKG_CONFIG_PATH=${PKG_CONFIG_PATH#?} ; fi
+0.666 if [ "$(echo -n $PKG_CONFIG_PATH | tail -c 1)" = ":" ]; then export PKG_CONFIG_PATH=${PKG_CONFIG_PATH%?} ; fi
+0.666 if [ "$(echo -n $ROS_VERSION | head -c 1)" = ":" ]; then export ROS_VERSION=${ROS_VERSION#?} ; fi
+0.666 if [ "$(echo -n $ROS_VERSION | tail -c 1)" = ":" ]; then export ROS_VERSION=${ROS_VERSION%?} ; fi'
+0.666 ++++ export CMAKE_PREFIX_PATH=/opt/ros/jazzy/install:
+0.666 ++++ CMAKE_PREFIX_PATH=/opt/ros/jazzy/install:
+0.666 ++++ export LD_LIBRARY_PATH=/opt/ros/jazzy/install/lib:/usr/local/cuda/compat:/usr/local/cuda/lib64:
+0.666 ++++ LD_LIBRARY_PATH=/opt/ros/jazzy/install/lib:/usr/local/cuda/compat:/usr/local/cuda/lib64:
+0.666 ++++ export PATH=/opt/ros/jazzy/install/bin:/opt/venv/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+0.666 ++++ PATH=/opt/ros/jazzy/install/bin:/opt/venv/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+0.666 ++++ export PYTHONPATH=/opt/ros/jazzy/install/lib/python3.12/site-packages:/usr/lib/python3/dist-packages:
+0.666 ++++ PYTHONPATH=/opt/ros/jazzy/install/lib/python3.12/site-packages:/usr/lib/python3/dist-packages:
+0.666 ++++ export AMENT_PREFIX_PATH=/opt/ros/jazzy/install:
+0.666 ++++ AMENT_PREFIX_PATH=/opt/ros/jazzy/install:
+0.666 ++++ COLCON_CURRENT_PREFIX=/opt/ros/jazzy/install
+0.666 ++++ _colcon_prefix_sh_source_script /opt/ros/jazzy/install/share/ament_index_python/environment/ament_index-argcomplete.bash
+0.666 ++++ '[' -f /opt/ros/jazzy/install/share/ament_index_python/environment/ament_index-argcomplete.bash ']'
+0.667 ++++ '[' -n '' ']'
+0.667 ++++ . /opt/ros/jazzy/install/share/ament_index_python/environment/ament_index-argcomplete.bash
+0.667 +++++ type register-python-argcomplete3
+0.667 +++++ type register-python-argcomplete
+0.668 ++++++ register-python-argcomplete ament_index
+0.675 +++++ eval ''
+0.675 ++++ export PKG_CONFIG_PATH=/opt/ros/jazzy/install/lib/pkgconfig:
+0.675 ++++ PKG_CONFIG_PATH=/opt/ros/jazzy/install/lib/pkgconfig:
+0.675 ++++ export PKG_CONFIG_PATH=/opt/ros/jazzy/install/lib/aarch64-linux-gnu/pkgconfig:/opt/ros/jazzy/install/lib/pkgconfig:
+0.675 ++++ PKG_CONFIG_PATH=/opt/ros/jazzy/install/lib/aarch64-linux-gnu/pkgconfig:/opt/ros/jazzy/install/lib/pkgconfig:
+0.675 ++++ export LD_LIBRARY_PATH=/opt/ros/jazzy/install/opt/mimick_vendor/lib:/opt/ros/jazzy/install/lib:/usr/local/cuda/compat:/usr/local/cuda/lib64:
+0.675 ++++ LD_LIBRARY_PATH=/opt/ros/jazzy/install/opt/mimick_vendor/lib:/opt/ros/jazzy/install/lib:/usr/local/cuda/compat:/usr/local/cuda/lib64:
+0.675 ++++ COLCON_CURRENT_PREFIX=/opt/ros/jazzy/install
+0.675 ++++ _colcon_prefix_sh_source_script /opt/ros/jazzy/install/share/ros_environment/environment/0.ros_distro_check.sh
+0.675 ++++ '[' -f /opt/ros/jazzy/install/share/ros_environment/environment/0.ros_distro_check.sh ']'
+0.675 ++++ '[' -n '' ']'
+0.675 ++++ . /opt/ros/jazzy/install/share/ros_environment/environment/0.ros_distro_check.sh
+0.675 +++++ '[' -n jazzy -a jazzy '!=' jazzy ']'
+0.675 ++++ export ROS_AUTOMATIC_DISCOVERY_RANGE=SUBNET
+0.675 ++++ ROS_AUTOMATIC_DISCOVERY_RANGE=SUBNET
+0.675 ++++ export ROS_DISTRO=jazzy
+0.675 ++++ ROS_DISTRO=jazzy
+0.675 ++++ export ROS_PYTHON_VERSION=3
+0.675 ++++ ROS_PYTHON_VERSION=3
+0.675 ++++ export ROS_VERSION=2
+0.676 ++++ ROS_VERSION=2
+0.676 ++++ COLCON_CURRENT_PREFIX=/opt/ros/jazzy/install
+0.676 ++++ _colcon_prefix_sh_source_script /opt/ros/jazzy/install/share/ros2cli/environment/ros2-argcomplete.bash
+0.676 ++++ '[' -f /opt/ros/jazzy/install/share/ros2cli/environment/ros2-argcomplete.bash ']'
+0.676 ++++ '[' -n '' ']'
+0.676 ++++ . /opt/ros/jazzy/install/share/ros2cli/environment/ros2-argcomplete.bash
+0.676 +++++ type register-python-argcomplete3
+0.676 +++++ type register-python-argcomplete
+0.677 ++++++ register-python-argcomplete ros2
+0.682 +++++ eval ''
+0.684 +++++ echo -n /opt/ros/jazzy/install:
+0.684 +++++ head -c 1
+0.690 ++++ '[' / = : ']'
+0.692 +++++ echo -n /opt/ros/jazzy/install:
+0.692 +++++ tail -c 1
+0.696 ++++ '[' : = : ']'
+0.696 ++++ export CMAKE_PREFIX_PATH=/opt/ros/jazzy/install
+0.696 ++++ CMAKE_PREFIX_PATH=/opt/ros/jazzy/install
+0.698 +++++ echo -n /opt/ros/jazzy/install:
+0.698 +++++ head -c 1
+0.701 ++++ '[' / = : ']'
+0.702 +++++ echo -n /opt/ros/jazzy/install:
+0.702 +++++ tail -c 1
+0.705 ++++ '[' : = : ']'
+0.705 ++++ export AMENT_PREFIX_PATH=/opt/ros/jazzy/install
+0.705 ++++ AMENT_PREFIX_PATH=/opt/ros/jazzy/install
+0.706 +++++ echo -n /opt/ros/jazzy/install/lib/aarch64-linux-gnu/pkgconfig:/opt/ros/jazzy/install/lib/pkgconfig:
+0.707 +++++ head -c 1
+0.709 ++++ '[' / = : ']'
+0.711 +++++ echo -n /opt/ros/jazzy/install/lib/aarch64-linux-gnu/pkgconfig:/opt/ros/jazzy/install/lib/pkgconfig:
+0.711 +++++ tail -c 1
+0.713 ++++ '[' : = : ']'
+0.713 ++++ export PKG_CONFIG_PATH=/opt/ros/jazzy/install/lib/aarch64-linux-gnu/pkgconfig:/opt/ros/jazzy/install/lib/pkgconfig
+0.713 ++++ PKG_CONFIG_PATH=/opt/ros/jazzy/install/lib/aarch64-linux-gnu/pkgconfig:/opt/ros/jazzy/install/lib/pkgconfig
+0.715 +++++ echo -n 2
+0.715 +++++ head -c 1
+0.717 ++++ '[' 2 = : ']'
+0.718 +++++ echo -n 2
+0.718 +++++ tail -c 1
+0.721 ++++ '[' 2 = : ']'
+0.721 +++ unset _colcon_ordered_commands
+[2026-03-17T01:40:00.792Z] 0.721 +++ unset _colcon_prefix_sh_source_script
+0.721 ROS2 building packages in /opt/ros/jazzy => ros2_control ros2_controllers robot_state_publisher joint_state_publisher xacro image_transport rosbridge_suite web_video_server
+0.721 +++ unset _colcon_prefix_bash_COLCON_CURRENT_PREFIX
+0.721 ++ unset COLCON_CURRENT_PREFIX
+0.721 ++ unset _colcon_prefix_chain_bash_source_script
+0.721 + export ROS_PACKAGE_PATH=/opt/ros/jazzy/install
+0.721 + ROS_PACKAGE_PATH=/opt/ros/jazzy/install
+0.721 + : /opt/ros/jazzy
+0.721 + : 'gazebo11 libgazebo11-dev libopencv-dev libopencv-contrib-dev libopencv-imgproc-dev python-opencv python3-opencv'
+0.721 + echo 'ROS2 building packages in /opt/ros/jazzy => ros2_control' ros2_controllers robot_state_publisher joint_state_publisher xacro image_transport rosbridge_suite web_video_server
+0.721 + mkdir -p /opt/ros/jazzy/src
+0.724 mkdir: cannot create directory ‘/opt/ros/jazzy/src’: Permission denied
+------
+[2026-03-17T01:40:00.795Z] Dockerfile-with-features:50
+--------------------
+  49 |     # ROS is built from source there, not from packages.ros.org.
+  50 | >>> RUN /ros2_install.sh \
+  51 | >>>     ros2_control \
+  52 | >>>     ros2_controllers \
+  53 | >>>     robot_state_publisher \
+  54 | >>>     joint_state_publisher \
+  55 | >>>     xacro \
+  56 | >>>     image_transport \
+  57 | >>>     rosbridge_suite \
+  58 | >>>     web_video_server
+[2026-03-17T01:40:00.796Z]   59 |     
+--------------------
+ERROR: failed to build: failed to solve: process "/bin/bash -c /ros2_install.sh     ros2_control     ros2_controllers     robot_state_publisher     joint_state_publisher     xacro     image_transport     rosbridge_suite     web_video_server" did not complete successfully: exit code: 1
+[2026-03-17T01:40:00.807Z] Stop (1983 ms): Run: docker buildx build --load --build-arg BUILDKIT_INLINE_CACHE=1 -f /tmp/devcontainercli-me/container-features/0.83.3-1773711598818/Dockerfile-with-features -t vsc-deakin_rover-318d3a6556139e6a7fc21a6ca8b5a11d6ded9fb9d4d4675d25429bba3839bc05 --target dev_containers_target_stage --build-arg _DEV_CONTAINERS_BASE_IMAGE=dev_container_auto_added_stage_label /home/me/Documents/deakin_rover/.devcontainer/rover
+[2026-03-17T01:40:00.953Z] Error: Command failed: docker buildx build --load --build-arg BUILDKIT_INLINE_CACHE=1 -f /tmp/devcontainercli-me/container-features/0.83.3-1773711598818/Dockerfile-with-features -t vsc-deakin_rover-318d3a6556139e6a7fc21a6ca8b5a11d6ded9fb9d4d4675d25429bba3839bc05 --target dev_containers_target_stage --build-arg _DEV_CONTAINERS_BASE_IMAGE=dev_container_auto_added_stage_label /home/me/Documents/deakin_rover/.devcontainer/rover
+[2026-03-17T01:40:00.953Z]     at K9 (/home/me/.vscode-remote-containers/dist/dev-containers-cli-0.447.0/dist/spec-node/devContainersSpecCLI.js:468:2009)
+[2026-03-17T01:40:00.953Z]     at async vD (/home/me/.vscode-remote-containers/dist/dev-containers-cli-0.447.0/dist/spec-node/devContainersSpecCLI.js:467:1910)
+[2026-03-17T01:40:00.953Z]     at async RL (/home/me/.vscode-remote-containers/dist/dev-containers-cli-0.447.0/dist/spec-node/devContainersSpecCLI.js:467:608)
+[2026-03-17T01:40:00.953Z]     at async AZ (/home/me/.vscode-remote-containers/dist/dev-containers-cli-0.447.0/dist/spec-node/devContainersSpecCLI.js:485:3870)
+[2026-03-17T01:40:00.953Z]     at async uC (/home/me/.vscode-remote-containers/dist/dev-containers-cli-0.447.0/dist/spec-node/devContainersSpecCLI.js:485:4989)
+[2026-03-17T01:40:00.953Z]     at async L5 (/home/me/.vscode-remote-containers/dist/dev-containers-cli-0.447.0/dist/spec-node/devContainersSpecCLI.js:666:205)
+[2026-03-17T01:40:00.953Z]     at async G5 (/home/me/.vscode-remote-containers/dist/dev-containers-cli-0.447.0/dist/spec-node/devContainersSpecCLI.js:665:15084)
+[2026-03-17T01:40:00.953Z]     at async /home/me/.vscode-remote-containers/dist/dev-containers-cli-0.447.0/dist/spec-node/devContainersSpecCLI.js:485:1188
+[2026-03-17T01:40:00.953Z] Stop (5322 ms): Run: /home/me/.vscode-server/cli/servers/Stable-61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/server/node /home/me/.vscode-remote-containers/dist/dev-containers-cli-0.447.0/dist/spec-node/devContainersSpecCLI.js up --container-session-data-folder /tmp/devcontainers-2fd5279c-45ee-4521-8488-2aa9a5953ecb1773711592868 --workspace-folder /home/me/Documents/deakin_rover --workspace-mount-consistency cached --gpu-availability detect --id-label devcontainer.local_folder=/home/me/Documents/deakin_rover --id-label devcontainer.config_file=/home/me/Documents/deakin_rover/.devcontainer/rover/devcontainer.json --log-level debug --log-format json --config /home/me/Documents/deakin_rover/.devcontainer/rover/devcontainer.json --default-user-env-probe loginInteractiveShell --mount type=volume,source=vscode,target=/vscode,external=true --skip-post-create --update-remote-user-uid-default on --mount-workspace-git-root --include-configuration --include-merged-configuration
+[2026-03-17T01:40:00.954Z] Exit code 1
+[2026-03-17T01:40:00.957Z] Command failed: /home/me/.vscode-server/cli/servers/Stable-61b3d0ab13be7dda2389f1d3e60a119c7f660cc3/server/node /home/me/.vscode-remote-containers/dist/dev-containers-cli-0.447.0/dist/spec-node/devContainersSpecCLI.js up --container-session-data-folder /tmp/devcontainers-2fd5279c-45ee-4521-8488-2aa9a5953ecb1773711592868 --workspace-folder /home/me/Documents/deakin_rover --workspace-mount-consistency cached --gpu-availability detect --id-label devcontainer.local_folder=/home/me/Documents/deakin_rover --id-label devcontainer.config_file=/home/me/Documents/deakin_rover/.devcontainer/rover/devcontainer.json --log-level debug --log-format json --config /home/me/Documents/deakin_rover/.devcontainer/rover/devcontainer.json --default-user-env-probe loginInteractiveShell --mount type=volume,source=vscode,target=/vscode,external=true --skip-post-create --update-remote-user-uid-default on --mount-workspace-git-root --include-configuration --include-merged-configuration
+[2026-03-17T01:40:00.957Z] Exit code 1

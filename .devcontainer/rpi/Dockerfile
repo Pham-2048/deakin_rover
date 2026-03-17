@@ -56,7 +56,7 @@ RUN sudo apt-get update && sudo apt-get install -y \
 # System tools for monitoring and development
 # ============================================================
 RUN sudo apt-get update && sudo apt-get install -y \
-    python3-opencv \
+    # python3-opencv \
     python3-pip \
     python3-numpy \
     python3-yaml \

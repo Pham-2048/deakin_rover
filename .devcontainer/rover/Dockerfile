@@ -9,6 +9,10 @@ RUN if ! id -u $USER_UID >/dev/null 2>&1; then \
     groupadd --gid $USER_GID $USERNAME && \
     useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME; \
     fi
+# Refresh expired ROS2 GPG key (key F42ED6FBAB17C654 expires in dustynv base images)
+RUN sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc \
+    | sudo gpg --dearmor \
+    | sudo tee /usr/share/keyrings/ros-archive-keyring.gpg > /dev/null
 # Add sudo support for the non-root user
 RUN apt-get update && \
     apt-get install -y sudo && \
@@ -22,35 +26,44 @@ USER $USERNAME
 RUN sudo usermod --append --groups video $USERNAME
 
 # Update all packages
-RUN sudo apt update && sudo apt upgrade -y
+RUN sudo apt-get update && sudo apt-get upgrade -y
 
 # Install Git
-RUN sudo apt install -y git
+RUN sudo apt-get install -y git
 
 # Rosdep update
 RUN rosdep update
 
 # Source the ROS setup file
-RUN echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> ~/.bashrc
+RUN echo "source /opt/ros/${ROS_DISTRO}/install/setup.bash" >> ~/.bashrc
 
 ################################
 ## ADD ANY CUSTOM SETUP BELOW ##
 ################################
-# Packages for rover infrastructure
-RUN sudo apt-get update && sudo apt-get install -y \
-    ros-${ROS_DISTRO}-moveit \
-    ros-${ROS_DISTRO}-ros2-control \
-    ros-${ROS_DISTRO}-ros2-controllers \
-    ros-${ROS_DISTRO}-robot-state-publisher \
-    ros-${ROS_DISTRO}-joint-state-publisher \
-    ros-${ROS_DISTRO}-xacro \
-    ros-${ROS_DISTRO}-image-transport \
-    ros-${ROS_DISTRO}-rosbridge-server \
-    ros-${ROS_DISTRO}-web-video-server \
+# Install additional ROS packages from source using dusty-nv's build helper.
+# apt-get install ros-jazzy-* does not work in dustynv base images because
+# ROS is built from source there, not from packages.ros.org.
+# RUN sudo -E /ros2_install.sh \
+#     ros2_control \
+#     ros2_controllers \
+#     robot_state_publisher \
+#     joint_state_publisher \
+#     xacro \
+#     image_transport \
+#     rosbridge_suite \
+#     web_video_server
 
-    # System tools for monitoring and development
-    RUN sudo apt-get update && sudo apt-get install -y \
-    python3-opencv \
+RUN sudo apt-get update && sudo apt-get install -y \
+    ros-jazzy-ros2-control \
+    ros-jazzy-ros2-controllers \
+    ros-jazzy-joint-state-publisher \
+    ros-jazzy-robot-state-publisher \
+    ros-jazzy-xacro \
+    ros-jazzy-rosbridge-server
+
+# System tools for monitoring and development
+RUN sudo apt-get update && sudo apt-get install -y \
+    # python3-opencv \
     python3-pip \
     python3-numpy \
     python3-yaml \
@@ -65,4 +78,4 @@ RUN sudo apt-get update && sudo apt-get install -y \
 RUN pip3 install --no-cache-dir --break-system-packages \
     psutil
 
-
+RUN echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> ~/.bashrc

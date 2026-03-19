@@ -81,10 +81,10 @@ RUN pip3 install --no-cache-dir --break-system-packages \
 # Install ROS dependencies from package.xml files.
 # rpi_ws/src is copied from the build context (repo root), rosdep runs,
 # then the copy is removed — dependencies are baked into the image layer.
-COPY rpi_ws/src /tmp/rpi_ws_src/
-RUN rosdep install -y --from-paths /tmp/rpi_ws_src -i -r --rosdistro jazzy \
-    --skip-keys "libopencv-dev libopencv-contrib-dev libopencv-imgproc-dev python-opencv python3-opencv ros-jazzy-ament-cmake-clang-tidy python3-ikpy-pip ament_python async_web_server_cpp" \
-    && sudo rm -rf /tmp/rpi_ws_src
+# COPY rpi_ws/src /tmp/rpi_ws_src/
+# RUN rosdep install -y --from-paths /tmp/rpi_ws_src -i -r --rosdistro jazzy \
+#     --skip-keys "libopencv-dev libopencv-contrib-dev libopencv-imgproc-dev python-opencv python3-opencv ros-jazzy-ament-cmake-clang-tidy python3-ikpy-pip ament_python async_web_server_cpp" \
+#     && sudo rm -rf /tmp/rpi_ws_src
 
 RUN echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> ~/.bashrc
 

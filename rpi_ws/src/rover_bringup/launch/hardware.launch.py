@@ -10,8 +10,7 @@ import subprocess
 from launch import LaunchDescription
 from launch_ros.actions import Node
 from launch.actions import DeclareLaunchArgument, TimerAction
-from launch.conditions import IfCondition
-from launch.substitutions import LaunchConfiguration, PythonExpression
+from launch.substitutions import LaunchConfiguration
 from ament_index_python.packages import get_package_share_directory
 from launch_ros.substitutions import FindPackageShare
 from launch.substitutions import PathJoinSubstitution
@@ -69,7 +68,6 @@ def generate_launch_description():
         name='camera_node',
         parameters=[camera_config, {'use_mock': use_mock_cfg}],   # launch arg overrides YAML
         output='screen',
-        condition=IfCondition(PythonExpression(["'", use_mock_cfg, "' == 'false'"])),
     )
 
     return LaunchDescription([

@@ -76,8 +76,7 @@ RUN sudo apt-get update && sudo apt-get install -y \
 
 # Python packages for rover nodes
 RUN pip3 install --no-cache-dir --break-system-packages \
-    psutil \
-    ikpy
+    psutil
 
 RUN echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> ~/.bashrc
 

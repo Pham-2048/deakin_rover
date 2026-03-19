@@ -1,7 +1,6 @@
-#! /usr/bin/env python
+#!/usr/bin/env python3
 
 import websocket
-import rospy
 import unittest
 import time
 
@@ -20,19 +19,17 @@ class TestWebsocket(unittest.TestCase):
         self.ws.send("hi")
         self.assertEqual("hi", self.ws.recv())
 
-        self.ws.ping("test ping")
+        self.ws.ping(b"test ping")
         ping_echo = self.ws.recv_frame()
         self.assertEqual(9, ping_echo.opcode)
-        self.assertEqual("test ping", ping_echo.data)
+        self.assertEqual(b"test ping", ping_echo.data)
 
-        self.ws.pong("test pong")
+        self.ws.pong(b"test pong")
         pong_echo = self.ws.recv_frame()
         self.assertEqual(10, pong_echo.opcode)
-        self.assertEqual("test pong", pong_echo.data)
+        self.assertEqual(b"test pong", pong_echo.data)
 
 if __name__ == '__main__':
     time.sleep(1) # ensure server is up
 
-    import rostest
-    rospy.init_node('websocket_test')
-    rostest.rosrun('async_web_server_cpp', 'websocket', TestWebsocket)
+    unittest.main()

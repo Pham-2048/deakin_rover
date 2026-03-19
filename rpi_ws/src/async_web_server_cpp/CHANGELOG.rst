@@ -2,6 +2,37 @@
 Changelog for package async_web_server_cpp
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.0.1 (2025-09-04)
+------------------
+* Update ROS 2 distributions for CI
+* Fix to build with current Boost libraries: (`#7 <https://github.com/fkie/async_web_server_cpp/issues/7>`_)
+* Fix warning message
+* Port Windows 10 compatibility fixes to ROS 2 branch
+* Make boost::regex a private dependency
+* Contributors: Julian Francis, Piya Pimchankam, Timo Röhling
+
+2.0.0 (2021-01-14)
+------------------
+* New ROS 2 port
+  - ROS 2 releases will have version numbers 2.x
+  - ROS 1 releases will continue with version numbers 1.x
+
+1.0.2 (2021-01-12)
+------------------
+* Fix integer comparisons
+* Use HTTP/1.1 reply for WebSockets protocol upgrade
+* Contributors: Timo Röhling
+
+1.0.1 (2021-01-12)
+------------------
+* New maintainer: Timo Röhling
+* Merge outstanding pull requests
+  GT-RAIL#14: Fix compatibility issue with Apache2 websocket proxy
+  GT-RAIL#16: Fix C++ include path for unit tests (obsolete)
+  GT-RAIL#19: Fix Python 3 compatibility for unit tests
+* Modernize CMakeLists.txt
+* Auto-detect MIME types from file extensions
+
 0.0.3 (2015-08-18)
 ------------------
 * Merge pull request #6 from mitchellwills/develop

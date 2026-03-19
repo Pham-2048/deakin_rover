@@ -9,7 +9,7 @@
   <arg name="use_mock" default="true" description="Use mock mode (skips socketcan_bridge)"/>
 
   <!-- socketcan_bridge — only launched on real hardware (skipped in mock mode) -->
-  <node pkg="socketcan_bridge" exec="socketcan_bridge_node" name="socketcan_bridge_node"
+  <node pkg="nobleo_socketcan_bridge" exec="socketcan_bridge" name="socketcan_bridge_node"
         output="screen" unless="$(var use_mock)">
     <param name="can_device" value="can0"/>
   </node>

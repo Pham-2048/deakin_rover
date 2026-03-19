@@ -9,7 +9,11 @@
 
 camera_node:
   ros__parameters:
+<<<<<<< HEAD
     use_mock: true            # Set to false on real rover with cameras
+=======
+    use_mock: false           # Real cameras
+>>>>>>> 3465639 (reinitialised git repository)
 
     # Camera device paths (for real cameras)
     # HARDWARE UPGRADE: Update these to match your USB camera device paths
@@ -25,6 +29,10 @@ camera_node:
       - "camera3"             # → /camera3/image_raw (Arm)
 
     # Capture settings
+<<<<<<< HEAD
     frame_rate: 5.0           # FPS per camera (keep low in mock mode — no GPU in Docker)
+=======
+    frame_rate: 15.0          # FPS per camera
+>>>>>>> 3465639 (reinitialised git repository)
     resolution_width: 640     # pixels
     resolution_height: 480    # pixels

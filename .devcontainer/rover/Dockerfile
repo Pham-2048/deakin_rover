@@ -42,25 +42,16 @@ RUN echo "source /opt/ros/${ROS_DISTRO}/install/setup.bash" >> ~/.bashrc
 ################################
 # Install additional ROS packages from source using dusty-nv's build helper.
 # apt-get install ros-jazzy-* does not work in dustynv base images because
-# ROS is built from source there, not from packages.ros.org.
-RUN sudo -E /ros2_install.sh \
-    ros2_control \
-    ros2_controllers \
-    robot_state_publisher \
-    joint_state_publisher \
-    xacro \
-    image_transport \
-    rosbridge_suite \
-    web_video_server
 
-# RUN sudo apt-get update && sudo apt-get install -y \
-#     ros-jazzy-ros2-control \
-#     ros-jazzy-ros2-controllers \
-#     ros-jazzy-joint-state-publisher \
-#     ros-jazzy-robot-state-publisher \
-#     ros-jazzy-xacro \
-#     ros-jazzy-rosbridge-server \
-#     libmodbus-dev
+RUN sudo apt-get update && sudo apt-get install -y \
+    ros-jazzy-ros2-control \
+    ros-jazzy-ros2-controllers \
+    ros-jazzy-joint-state-publisher \
+    ros-jazzy-robot-state-publisher \
+    ros-jazzy-xacro \
+    ros-jazzy-rosbridge-server \
+    ros-jazzy-image-transport \
+    libmodbus-dev
 
 # System tools for monitoring and development
 RUN sudo apt-get update && sudo apt-get install -y \

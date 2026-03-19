@@ -67,7 +67,11 @@ def generate_launch_description():
         package='rover_camera',
         executable='camera_node',
         name='camera_node',
+<<<<<<< HEAD
         parameters=[camera_config],
+=======
+        parameters=[camera_config, {'use_mock': use_mock_cfg}],   # launch arg overrides YAML
+>>>>>>> 3465639 (reinitialised git repository)
         output='screen',
         condition=IfCondition(PythonExpression(["'", use_mock_cfg, "' == 'false'"])),
     )

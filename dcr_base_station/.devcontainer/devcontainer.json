@@ -1,0 +1,18 @@
+{
+  "name": "Base Station",
+  "build": {
+    "dockerfile": "Dockerfile",
+    // "context": "../.."
+  },
+  "runArgs": [
+    "--privileged",
+    "--network=host"
+  ],
+  "workspaceMount": "source=${localWorkspaceFolder}/base_station_ws,target=/${localWorkspaceFolderBasename}/base_station_ws,type=bind",
+  "workspaceFolder": "/${localWorkspaceFolderBasename}/base_station_ws",
+  // "mounts" causes problems on Windows hosts
+  "mounts": [
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.bash_history,target=/home/vscode/.bash_history,type=bind"
+  ],
+  "postCreateCommand": "echo 'Container ready.'"
+}

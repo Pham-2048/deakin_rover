@@ -1,2 +1,0 @@
-include(CMakeFindDependencyMacro)
-find_dependency(Boost @Boost_VERSION@ COMPONENTS filesystem thread)

@@ -1,0 +1,5 @@
+int64 address           # The Motor address to send the command to
+int64 speed             # The requested speed to be achieved
+int64 direction         # Which direction to go (i.e. clockwise, anti-clockwise, brake, idle)
+---
+int64 result            # The response from the motor (Should just be a bool...)

@@ -1,0 +1,7 @@
+<library path="rover_motor_driver">
+  <class name="rover_motor_driver/BLD305SHardware"
+         type="rover_motor_driver::BLD305SHardware"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>BLD-305S RS485 Modbus RTU hardware interface for 6-wheel rover</description>
+  </class>
+</library>

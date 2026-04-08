@@ -1,0 +1,32 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 5  # Hz — limited by RS485 Modbus RTU at 9600 baud
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    diff_drive_controller:
+      type: diff_drive_controller/DiffDriveController
+
+diff_drive_controller:
+  ros__parameters:
+    open_loop: true
+    left_wheel_names: ["joint_wheel_front_left", "joint_wheel_mid_left", "joint_wheel_rear_left"]
+    right_wheel_names: ["joint_wheel_front_right", "joint_wheel_mid_right", "joint_wheel_rear_right"]
+    wheel_separation: 0.55
+    wheel_radius: 0.2
+
+    odom_frame_id: "odom"
+    base_frame_id: "base_link"
+
+    pose_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.01]
+    twist_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.01]
+
+    enable_odom_tf: true
+
+    publish_rate: 5.0
+
+    linear.x.max_velocity: 1.0
+    linear.x.min_velocity: -1.0
+    angular.z.max_velocity: 1.0
+    angular.z.min_velocity: -1.0

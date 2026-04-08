@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<launch>
+  <let name="urdf"
+       value="$(command 'xacro $(find-pkg-share rover_description)/urdf/rover.urdf')"/>
+  <let name="controllers_yaml"
+       value="$(find-pkg-share rover_control)/config/controllers.yaml"/>
+
+  <!-- Publish robot description and TF transforms -->
+  <node pkg="robot_state_publisher" exec="robot_state_publisher" name="robot_state_publisher">
+    <param name="robot_description" value="$(var urdf)"/>
+  </node>
+
+  <!-- Controller manager — loads hardware interface and controllers -->
+  <node pkg="controller_manager" exec="ros2_control_node" name="controller_manager">
+    <param name="robot_description" value="$(var urdf)"/>
+    <param from="$(var controllers_yaml)"/>
+  </node>
+
+  <!-- Spawn joint_state_broadcaster (publishes /joint_states) -->
+  <node pkg="controller_manager" exec="spawner" name="joint_state_broadcaster_spawner"
+        args="joint_state_broadcaster"/>
+
+  <!-- Spawn diff_drive_controller (subscribes to /diff_drive_controller/cmd_vel) -->
+  <node pkg="controller_manager" exec="spawner" name="diff_drive_spawner"
+        args="diff_drive_controller"/>
+
+  <!-- RViz for visualizing the robot moving -->
+  <node pkg="rviz2" exec="rviz2" name="rviz2" output="screen"
+        args="-d $(find-pkg-share rover_description)/rviz/urdf.rviz"/>
+</launch>

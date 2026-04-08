@@ -1,5 +1,18 @@
-**/.vscode
-**/build
-**/install
-**/log
-remoteContainer*
+# ROS2 build artifacts
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Node.js / Next.js
+node_modules/
+.next/
+out/
+
+# OS
+.DS_Store
+Thumbs.db

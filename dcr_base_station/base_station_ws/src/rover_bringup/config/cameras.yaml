@@ -1,0 +1,28 @@
+# Camera USB device configuration for the Deakin Rover (Jetson Orin)
+#
+# Run `ls /dev/video*` on the Jetson to find the correct device indices.
+# USB cameras typically appear as /dev/video0, /dev/video2, /dev/video4, ...
+# (each camera exposes two video nodes; use the even-numbered one).
+#
+# Node names below must match the `name=` attributes in bringup.launch.xml.
+
+/camera1:
+  ros__parameters:
+    device: /dev/video0   # Front camera — change to your USB port
+    width: 640
+    height: 480
+    fps: 30
+
+/camera2:
+  ros__parameters:
+    device: /dev/video2   # Rear camera — change to your USB port
+    width: 640
+    height: 480
+    fps: 30
+
+/camera3:
+  ros__parameters:
+    device: /dev/video4   # Arm camera — change to your USB port
+    width: 640
+    height: 480
+    fps: 30

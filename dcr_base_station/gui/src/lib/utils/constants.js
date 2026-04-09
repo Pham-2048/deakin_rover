@@ -28,7 +28,6 @@ export const DEFAULT_STREAM_URLS = [
 
 // Default configurable nodes that can be launched from the GUI
 export const DEFAULT_NODES = [
-  { id: 'camera_node', name: 'Camera Node', package: 'rover_camera', executable: 'camera_node' },
   { id: 'can_bridge', name: 'CAN Bridge', package: 'rover_can', executable: 'can_bridge_node' },
   { id: 'sensor_hub', name: 'Sensor Hub', package: 'rover_monitor', executable: 'system_monitor_node' },
   { id: 'system_monitor', name: 'System Monitor', package: 'rover_monitor', executable: 'system_monitor_node' },

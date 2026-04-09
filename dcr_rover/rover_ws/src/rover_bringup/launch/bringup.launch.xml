@@ -32,11 +32,6 @@
     <param name="robot_description" value="$(command 'cat $(find-pkg-share motor_node)/urdf/arm.urdf')"/>
   </node> -->
 
-  <!-- HTTP MJPEG/H.264 video server - serves ROS image topics to the GUI on port 8080 -->
-  <!-- <node pkg="web_video_server" exec="web_video_server" name="web_video_server" output="screen">
-    <param name="port" value="8080"/>
-    <param name="server_threads" value="4"/>
-  </node> -->
 
   <!-- Camera nodes - edit config/cameras.yaml to set the correct /dev/videoX paths -->
   <!-- <node pkg="v4l2_camera" exec="v4l2_camera_node" name="camera1" namespace="camera1" output="screen">

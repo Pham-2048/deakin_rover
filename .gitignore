@@ -16,3 +16,6 @@ out/
 # OS
 .DS_Store
 Thumbs.db
+
+# AI assistant guidance (local only)
+CLAUDE.md

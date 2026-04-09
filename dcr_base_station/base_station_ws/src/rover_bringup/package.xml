@@ -14,8 +14,6 @@
   <exec_depend>motor_node</exec_depend>
   <exec_depend>dcr_motor_controller</exec_depend>
   <exec_depend>dcr_joy_to_motor</exec_depend>
-  <exec_depend>rover_camera</exec_depend>
-  <exec_depend>web_video_server</exec_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
